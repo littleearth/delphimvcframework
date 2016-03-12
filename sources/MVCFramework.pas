@@ -513,7 +513,6 @@ type
     procedure LoadSystemControllers; virtual;
     procedure ResponseErrorPage(E: Exception; Request: TWebRequest;
       Response: TWebResponse); virtual;
-    procedure SetDefaultReponseHeaders(AContext: TWebContext); virtual;
   public
 
     class function GetCurrentSession(ASessionTimeout: UInt64;
@@ -573,10 +572,7 @@ type
     Messaging = 'messaging';
     AllowUnhandledAction = 'allow_unhandled_action'; // tristan
     ServerName = 'server_name'; // tristan
-<<<<<<< HEAD
-=======
     ExposeServerSignature = 'server_signature';
->>>>>>> 9e902c24e2e97f9c36efd6591fb8f15edc7fd6c0
   end;
 
 function IsShuttingDown: boolean;
@@ -692,10 +688,7 @@ begin
 
   Config[TMVCConfigKey.AllowUnhandledAction] := 'false'; // tristan
   Config[TMVCConfigKey.ServerName] := 'DelphiMVCFramework'; // tristan
-<<<<<<< HEAD
-=======
   Config[TMVCConfigKey.ExposeServerSignature] := 'true';
->>>>>>> 9e902c24e2e97f9c36efd6591fb8f15edc7fd6c0
 
   FMimeTypes.Add('.html', TMVCMimeType.TEXT_HTML);
   FMimeTypes.Add('.htm', TMVCMimeType.TEXT_HTML);
@@ -745,14 +738,6 @@ end;
 
 procedure TMVCEngine.SetDefaultReponseHeaders(AContext: TWebContext);
 begin
-<<<<<<< HEAD
-  AContext.Response.CustomHeaders.Values['Server'] :=
-    Config[TMVCConfigKey.ServerName];
-  AContext.Response.RawWebResponse.Date := Now;
-end;
-
-
-=======
   if Config[TMVCConfigKey.ExposeServerSignature] = 'true' then
   begin
     AContext.Response.CustomHeaders.Values['Server'] :=
@@ -761,7 +746,6 @@ end;
   AContext.Response.RawWebResponse.Date := Now;
 end;
 
->>>>>>> 9e902c24e2e97f9c36efd6591fb8f15edc7fd6c0
 function TMVCEngine.ExecuteAction(Sender: TObject; Request: TWebRequest;
   Response: TWebResponse): boolean;
 var
@@ -780,7 +764,6 @@ begin
   ParamsTable := TMVCRequestParamsTable.Create;
   try
     Context := TWebContext.Create(Request, Response, FMVCConfig);
-    SetDefaultReponseHeaders(Context); //tristan
     try
       SetDefaultReponseHeaders(Context); // tristan
       // Static file handling
@@ -1117,26 +1100,16 @@ begin
   if Pos('text/html', LowerCase(Request.Accept)) = 1 then
   begin
     Response.ContentType := 'text/plain';
-<<<<<<< HEAD
-    Response.Content := Config[TMVCConfigKey.ServerName] + ' ERROR:' + sLineBreak +
-      'Exception raised of class: ' + E.ClassName + sLineBreak +
-=======
     Response.Content := Config[TMVCConfigKey.ServerName] + ' ERROR:' +
       sLineBreak + 'Exception raised of class: ' + E.ClassName + sLineBreak +
->>>>>>> 9e902c24e2e97f9c36efd6591fb8f15edc7fd6c0
       '***********************************************' + sLineBreak + E.Message
       + sLineBreak + '***********************************************';
   end
   else
   begin
     Response.ContentType := 'text/plain';
-<<<<<<< HEAD
-    Response.Content := Config[TMVCConfigKey.ServerName] + ' ERROR:' + sLineBreak +
-      'Exception raised of class: ' + E.ClassName + sLineBreak +
-=======
     Response.Content := Config[TMVCConfigKey.ServerName] + ' ERROR:' +
       sLineBreak + 'Exception raised of class: ' + E.ClassName + sLineBreak +
->>>>>>> 9e902c24e2e97f9c36efd6591fb8f15edc7fd6c0
       '***********************************************' + sLineBreak + E.Message
       + sLineBreak + '***********************************************';
   end;
