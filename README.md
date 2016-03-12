@@ -1,7 +1,13 @@
 #DMVCFramework features
-  * Simple to use (really)
+  * Simple to use, check the ["Getting Started: 5 minutes guide"](https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html) and you will be up and running in 5 minutes or less!
   * RESTful (RMM Level 3) compliant
+  * Stable and solid, used by small/mid/big projects since 2010
   * Can be used in load balanced environment using Redis (http://Redis.io) [dev]
+  * Optional session support
+  * Extendable using middlewares (simple hooks to handle request/response)
+  * CORS
+  * Basic Authentication
+  * Controllers inheritance
   * Fancy URL with parameter mappings
   * Specialied renders to generate text, html, JSON
   * Powerful mapper to map json to objects and datasets to objects
@@ -9,15 +15,16 @@
   * Integrated RESTClient
   * Works with XE3, XE4, XE5, XE6, XE7, XE8 and Delphi 10 Seattle
   * Completely unit tested
-  * There is a sample for each functionlities
+  * There is a sample for each functionality
   * There is a complete set of trainings about it, but the samples are included in the project
   * Experimental support for IOCP [dev]
   * Server side generated pages using Mustache (https://mustache.github.io/) for Delphi (https://github.com/synopse/dmustache)
   * Specific trainings are available (ask me for a date and a place)
   * Messaging extension using STOMP (beta)
   * Automatic documentation through /system/describeserver.info
-  * Community driven (Facebook group https://www.facebook.com/groups/delphimvcframework)
+  * Driven by its huge community (Facebook group https://www.facebook.com/groups/delphimvcframework)
   * Simple and [documented](https://github.com/danieleteti/delphimvcframework/blob/master/docs/ITDevCON%202013%20-%20Introduction%20to%20DelphiMVCFramework.pdf)
+  * Check the [DMVCFramework Developer Guide](https://danieleteti.gitbooks.io/delphimvcframework/content/) (work in progress)
   
 ## Trainings, consultancy or custom development service
 As you know, good support on open source software is a must for professional users.
@@ -34,7 +41,8 @@ These are the most notable:
 
 ##Samples and documentation
 DMVCFramework is provided with a lot of examples focused on specific functionality.
-All samples are in [Samples](https://github.com/danieleteti/delphimvcframework/tree/master/samples) folder
+All samples are in [Samples](https://github.com/danieleteti/delphimvcframework/tree/master/samples) folder.
+Check the [DMVCFramework Developer Guide](https://danieleteti.gitbooks.io/delphimvcframework/content/) (work in progress).
 
 
 #Sample Server
